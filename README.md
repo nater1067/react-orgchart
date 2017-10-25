@@ -1,4 +1,4 @@
-## Simple org chart for React
+## Simple Org Chart for React
 
 See the [example project](example/README.md) for demonstration of creating org chart data structure and using the OrgChart component.
 
