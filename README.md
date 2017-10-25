@@ -1,4 +1,5 @@
 ## Simple Org Chart for React
+<img width="388" alt="screen shot 2017-10-25 at 8 41 51 am" src="https://user-images.githubusercontent.com/909721/32008167-66a73b7c-b960-11e7-8d71-31a6a86c12dc.png">
 
 See the [example project](example/README.md) for demonstration of creating org chart data structure and using the OrgChart component.
 
