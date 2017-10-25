@@ -1,0 +1,31 @@
+{
+  "name": "react-orgchart",
+  "version": "0.0.1",
+  "description": "A simple org chart for React.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nater1067/react-orgchart.git"
+  },
+  "keywords": [
+    "orgchart",
+    "react-orgchart",
+    "react",
+    "org chart",
+    "react tree",
+    "react org chart"
+  ],
+  "author": "Nate Turner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nater1067/react-orgchart/issues"
+  },
+  "homepage": "https://github.com/nater1067/react-orgchart#readme",
+  "devDependencies": {
+    "react-tools": "^0.13.3"
+  },
+  "scripts": {
+    "build": "jsx index.jsx > index.js",
+    "prepublish": "npm run build"
+  }
+}
