@@ -13,7 +13,13 @@ class App extends Component {
       children: [
         {
           name: "Peter Gibbons",
-          actor: "Ron Livingston"
+          actor: "Ron Livingston",
+          children: [
+            {
+              name: "And More!!",
+              actor: "This is just to show how to build a complex tree with multiple levels of children. Enjoy!"
+            }
+          ]
         },
         {
           name: "Milton Waddams",
@@ -28,15 +34,13 @@ class App extends Component {
 
     const MyNodeComponent = ({node}) => {
       return (
-        <div className="node" onClick={() => alert("Hi my real name is: " + node.actor)}>{ node.name }</div>
+        <div className="initechNode" onClick={() => alert("Hi my real name is: " + node.actor)}>{ node.name }</div>
       );
     };
 
-    const orgChartTitle = 'Initech Actors';
-
     return (
-      <div className="App">
-        <OrgChart title={orgChartTitle} tree={initechOrg} NodeComponent={MyNodeComponent} />
+      <div className="App" id="initechOrgChart">
+        <OrgChart tree={initechOrg} NodeComponent={MyNodeComponent} />
       </div>
     );
   }

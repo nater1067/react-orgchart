@@ -1,6 +1,6 @@
 const React = require('react')
 
-const OrgChart = ({title, tree, NodeComponent}) => {
+const OrgChart = ({tree, NodeComponent}) => {
 
   const renderChildren = (node) => {
 
@@ -62,7 +62,6 @@ const OrgChart = ({title, tree, NodeComponent}) => {
 
   return (
     <div className="reactOrgChart">
-      <h2>{title}!!!???</h2>
       {renderChildren(tree)}
     </div>
   )

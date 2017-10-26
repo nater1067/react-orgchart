@@ -1,0 +1,15 @@
+.initechNode {
+    border: solid 3px red;
+    border-radius: 3px;
+    padding: 5px;
+    width: 150px;
+    display: inline-block;
+}
+
+#initechOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
+    border-right: solid 3px red
+}
+
+#initechOrgChart .nodeLineBorderTop {
+    border-top: solid 3px red;
+}

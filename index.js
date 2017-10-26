@@ -1,11 +1,11 @@
 const React = require('react')
 
-const OrgChart = ({title, tree, NodeComponent}) => {
+const OrgChart = ({tree, NodeComponent}) => {
 
   const renderChildren = (node) => {
 
     const hasSiblingRight = (childIndex) => {
-      return node.children.length > (childIndex + 1)
+      return (node.children || []).length > (childIndex + 1)
     };
 
     const hasSiblingLeft = (childIndex) => {
@@ -13,7 +13,7 @@ const OrgChart = ({title, tree, NodeComponent}) => {
     };
 
     const nodeLineBelow = (
-      React.createElement("td", {colSpan: node.children.length * 2, className: "nodeGroupCellLines"}, 
+      React.createElement("td", {colSpan: (node.children || []).length * 2, className: "nodeGroupCellLines"}, 
         React.createElement("table", {className: "nodeLineTable"}, 
           React.createElement("tr", null, 
             React.createElement("td", {className: "nodeLineCell nodeGroupLineVerticalMiddle"}), 
@@ -43,12 +43,12 @@ const OrgChart = ({title, tree, NodeComponent}) => {
     return (
       React.createElement("table", {className: "orgNodeChildGroup"}, 
         React.createElement("tr", null, 
-          React.createElement("td", {className: "nodeCell", colSpan: node.children.length * 2}, 
+          React.createElement("td", {className: "nodeCell", colSpan: (node.children || []).length * 2}, 
             React.createElement(NodeComponent, {node: node})
           )
         ), 
         React.createElement("tr", null, 
-          node.children.length > 0 && nodeLineBelow
+          (node.children || []).length > 0 && nodeLineBelow
         ), 
         React.createElement("tr", null, 
           childrenLinesAbove
@@ -62,7 +62,6 @@ const OrgChart = ({title, tree, NodeComponent}) => {
 
   return (
     React.createElement("div", {className: "reactOrgChart"}, 
-      React.createElement("h2", null, title, "!!!???"), 
       renderChildren(tree)
     )
   )
