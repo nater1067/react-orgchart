@@ -1,6 +1,6 @@
 {
   "name": "react-orgchart",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "A simple org chart for React.",
   "main": "index.js",
   "repository": {

@@ -5,8 +5,8 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "react-orgchart": "0.0.1",
-    "react-scripts": "1.0.14"
+    "react-orgchart": "0.0.9",
+    "react-scripts": "1.0n.14"
   },
   "scripts": {
     "start": "react-scripts start",

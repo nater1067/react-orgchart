@@ -5,7 +5,7 @@ const OrgChart = ({title, tree, NodeComponent}) => {
   const renderChildren = (node) => {
 
     const hasSiblingRight = (childIndex) => {
-      return node.children.length > (childIndex + 1)
+      return (node.children || []).length > (childIndex + 1)
     };
 
     const hasSiblingLeft = (childIndex) => {
@@ -13,7 +13,7 @@ const OrgChart = ({title, tree, NodeComponent}) => {
     };
 
     const nodeLineBelow = (
-      <td colSpan={node.children.length * 2} className="nodeGroupCellLines">
+      <td colSpan={(node.children || []).length * 2} className="nodeGroupCellLines">
         <table className="nodeLineTable">
           <tr>
             <td className="nodeLineCell nodeGroupLineVerticalMiddle" />
@@ -43,12 +43,12 @@ const OrgChart = ({title, tree, NodeComponent}) => {
     return (
       <table className="orgNodeChildGroup">
         <tr>
-          <td className="nodeCell" colSpan={node.children.length * 2}>
+          <td className="nodeCell" colSpan={(node.children || []).length * 2}>
             <NodeComponent node={node}/>
           </td>
         </tr>
         <tr>
-          {node.children.length > 0 && nodeLineBelow}
+          {(node.children || []).length > 0 && nodeLineBelow}
         </tr>
         <tr>
           {childrenLinesAbove}

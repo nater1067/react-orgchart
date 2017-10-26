@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import OrgChart from 'react-orgchart';
-import 'react-orgchart/styles.css';
+import 'react-orgchart/index.css';
 
 class App extends Component {
   render() {
