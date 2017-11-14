@@ -15,10 +15,12 @@ const OrgChart = ({tree, NodeComponent}) => {
     const nodeLineBelow = (
       <td colSpan={(node.children || []).length * 2} className="nodeGroupCellLines">
         <table className="nodeLineTable">
-          <tr>
-            <td className="nodeLineCell nodeGroupLineVerticalMiddle" />
-            <td className="nodeLineCell" />
-          </tr>
+          <tbody>
+            <tr>
+              <td className="nodeLineCell nodeGroupLineVerticalMiddle" />
+              <td className="nodeLineCell" />
+            </tr>
+          </tbody>
         </table>
       </td>
     );
@@ -26,10 +28,12 @@ const OrgChart = ({tree, NodeComponent}) => {
     const childrenLinesAbove = (node.children || []).map((child, childIndex) => (
       <td colSpan="2" className="nodeGroupCellLines" key={childIndex}>
         <table className="nodeLineTable">
-          <tr>
-            <td className={ "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') } />
-            <td className={ "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") } />
-          </tr>
+          <tbody>
+            <tr>
+              <td className={ "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') } />
+              <td className={ "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") } />
+            </tr>
+          </tbody>
         </table>
       </td>
     ));
@@ -42,20 +46,22 @@ const OrgChart = ({tree, NodeComponent}) => {
 
     return (
       <table className="orgNodeChildGroup">
-        <tr>
-          <td className="nodeCell" colSpan={(node.children || []).length * 2}>
-            <NodeComponent node={node}/>
-          </td>
-        </tr>
-        <tr>
-          {(node.children || []).length > 0 && nodeLineBelow}
-        </tr>
-        <tr>
-          {childrenLinesAbove}
-        </tr>
-        <tr>
-          {children}
-        </tr>
+        <tbody>
+          <tr>
+            <td className="nodeCell" colSpan={(node.children || []).length * 2}>
+              <NodeComponent node={node}/>
+            </td>
+          </tr>
+          <tr>
+            {(node.children || []).length > 0 && nodeLineBelow}
+          </tr>
+          <tr>
+            {childrenLinesAbove}
+          </tr>
+          <tr>
+            {children}
+          </tr>
+        </tbody>
       </table>
     )
   };
