@@ -24,7 +24,7 @@ const OrgChart = ({tree, NodeComponent}) => {
     );
 
     const childrenLinesAbove = (node.children || []).map((child, childIndex) => (
-      <td colSpan="2" className="nodeGroupCellLines">
+      <td colSpan="2" className="nodeGroupCellLines" key={childIndex}>
         <table className="nodeLineTable">
           <tr>
             <td className={ "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') } />
@@ -34,8 +34,8 @@ const OrgChart = ({tree, NodeComponent}) => {
       </td>
     ));
 
-    const children = (node.children || []).map(child => (
-      <td colSpan="2" className="nodeGroupCell">
+    const children = (node.children || []).map((child, childIndex) => (
+      <td colSpan="2" className="nodeGroupCell" key={childIndex}>
         { renderChildren(child) }
       </td>
     ));
