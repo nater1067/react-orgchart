@@ -35,7 +35,7 @@ var OrgChart = function OrgChart(_ref) {
     var childrenLinesAbove = (node.children || []).map(function (child, childIndex) {
       return React.createElement(
         "td",
-        { colSpan: "2", className: "nodeGroupCellLines" },
+        { colSpan: "2", className: "nodeGroupCellLines", key: childIndex },
         React.createElement(
           "table",
           { className: "nodeLineTable" },
@@ -49,10 +49,10 @@ var OrgChart = function OrgChart(_ref) {
       );
     });
 
-    var children = (node.children || []).map(function (child) {
+    var children = (node.children || []).map(function (child, childIndex) {
       return React.createElement(
         "td",
-        { colSpan: "2", className: "nodeGroupCell" },
+        { colSpan: "2", className: "nodeGroupCell", key: childIndex },
         renderChildren(child)
       );
     });
