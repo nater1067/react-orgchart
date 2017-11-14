@@ -17,8 +17,8 @@ const OrgChart = ({tree, NodeComponent}) => {
         <table className="nodeLineTable">
           <tbody>
             <tr>
-              <td className="nodeLineCell nodeGroupLineVerticalMiddle" />
-              <td className="nodeLineCell" />
+              <td colSpan={2} className="nodeLineCell nodeGroupLineVerticalMiddle" />
+              <td colSpan={2} className="nodeLineCell" />
             </tr>
           </tbody>
         </table>
@@ -30,8 +30,8 @@ const OrgChart = ({tree, NodeComponent}) => {
         <table className="nodeLineTable">
           <tbody>
             <tr>
-              <td className={ "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') } />
-              <td className={ "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") } />
+              <td colSpan={2} className={ "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') } />
+              <td colSpan={2} className={ "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") } />
             </tr>
           </tbody>
         </table>

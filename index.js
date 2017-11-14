@@ -29,8 +29,8 @@ var OrgChart = function OrgChart(_ref) {
           React.createElement(
             "tr",
             null,
-            React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" }),
-            React.createElement("td", { className: "nodeLineCell" })
+            React.createElement("td", { colSpan: 2, className: "nodeLineCell nodeGroupLineVerticalMiddle" }),
+            React.createElement("td", { colSpan: 2, className: "nodeLineCell" })
           )
         )
       )
@@ -49,8 +49,8 @@ var OrgChart = function OrgChart(_ref) {
             React.createElement(
               "tr",
               null,
-              React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') }),
-              React.createElement("td", { className: "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") })
+              React.createElement("td", { colSpan: 2, className: "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') }),
+              React.createElement("td", { colSpan: 2, className: "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") })
             )
           )
         )
