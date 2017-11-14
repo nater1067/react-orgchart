@@ -1,6 +1,6 @@
 {
   "name": "react-orgchart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple org chart for React.",
   "main": "index.js",
   "repository": {
@@ -22,10 +22,13 @@
   },
   "homepage": "https://github.com/nater1067/react-orgchart#readme",
   "devDependencies": {
-    "react-tools": "^0.13.3"
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1"
   },
   "scripts": {
-    "build": "jsx index.jsx > index.js",
+    "build": "babel index.jsx --out-dir . --copy-files",
     "prepublish": "npm run build"
   }
 }
