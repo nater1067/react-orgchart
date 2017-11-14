@@ -24,10 +24,14 @@ var OrgChart = function OrgChart(_ref) {
         "table",
         { className: "nodeLineTable" },
         React.createElement(
-          "tr",
+          "tbody",
           null,
-          React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" }),
-          React.createElement("td", { className: "nodeLineCell" })
+          React.createElement(
+            "tr",
+            null,
+            React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" }),
+            React.createElement("td", { className: "nodeLineCell" })
+          )
         )
       )
     );
@@ -40,10 +44,14 @@ var OrgChart = function OrgChart(_ref) {
           "table",
           { className: "nodeLineTable" },
           React.createElement(
-            "tr",
+            "tbody",
             null,
-            React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') }),
-            React.createElement("td", { className: "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") })
+            React.createElement(
+              "tr",
+              null,
+              React.createElement("td", { className: "nodeLineCell nodeGroupLineVerticalMiddle" + (hasSiblingLeft(childIndex) ? ' nodeLineBorderTop' : '') }),
+              React.createElement("td", { className: "nodeLineCell" + (hasSiblingRight(childIndex) ? " nodeLineBorderTop" : "") })
+            )
           )
         )
       );
@@ -61,28 +69,32 @@ var OrgChart = function OrgChart(_ref) {
       "table",
       { className: "orgNodeChildGroup" },
       React.createElement(
-        "tr",
+        "tbody",
         null,
         React.createElement(
-          "td",
-          { className: "nodeCell", colSpan: (node.children || []).length * 2 },
-          React.createElement(NodeComponent, { node: node })
+          "tr",
+          null,
+          React.createElement(
+            "td",
+            { className: "nodeCell", colSpan: (node.children || []).length * 2 },
+            React.createElement(NodeComponent, { node: node })
+          )
+        ),
+        React.createElement(
+          "tr",
+          null,
+          (node.children || []).length > 0 && nodeLineBelow
+        ),
+        React.createElement(
+          "tr",
+          null,
+          childrenLinesAbove
+        ),
+        React.createElement(
+          "tr",
+          null,
+          children
         )
-      ),
-      React.createElement(
-        "tr",
-        null,
-        (node.children || []).length > 0 && nodeLineBelow
-      ),
-      React.createElement(
-        "tr",
-        null,
-        childrenLinesAbove
-      ),
-      React.createElement(
-        "tr",
-        null,
-        children
       )
     );
   };
