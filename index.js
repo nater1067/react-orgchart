@@ -2,10 +2,34 @@
 
 var React = require('react');
 
+var _extends =
+  Object.assign ||
+  function(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+
+function _objectWithoutProperties(obj, keys) {
+  var target = {};
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+  return target;
+}
+
 var OrgChart = function OrgChart(_ref) {
   var tree = _ref.tree,
-      NodeComponent = _ref.NodeComponent;
-
+      NodeComponent = _ref.NodeComponent,
+      options = _objectWithoutProperties(_ref, ["tree", "NodeComponent"]);
 
   var renderChildren = function renderChildren(node) {
 
@@ -77,7 +101,7 @@ var OrgChart = function OrgChart(_ref) {
           React.createElement(
             "td",
             { className: "nodeCell", colSpan: (node.children || []).length * 2 },
-            React.createElement(NodeComponent, { node: node })
+            React.createElement(NodeComponent, _extends({ node: node }, options))
           )
         ),
         React.createElement(
