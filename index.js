@@ -29,7 +29,7 @@ function _objectWithoutProperties(obj, keys) {
 var OrgChart = function OrgChart(_ref) {
   var tree = _ref.tree,
       NodeComponent = _ref.NodeComponent,
-      options = _objectWithoutProperties(_ref, ["tree", "NodeComponent"]);
+      props = _objectWithoutProperties(_ref, ["tree", "NodeComponent"]);
 
   var renderChildren = function renderChildren(node) {
 
@@ -101,7 +101,7 @@ var OrgChart = function OrgChart(_ref) {
           React.createElement(
             "td",
             { className: "nodeCell", colSpan: (node.children || []).length * 2 },
-            React.createElement(NodeComponent, _extends({ node: node }, options))
+            React.createElement(NodeComponent, _extends({ node: node }, props))
           )
         ),
         React.createElement(

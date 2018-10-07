@@ -1,6 +1,6 @@
 const React = require('react')
 
-const OrgChart = ({tree, NodeComponent}) => {
+const OrgChart = ({tree, NodeComponent, ...props}) => {
 
   const renderChildren = (node) => {
 
@@ -49,7 +49,7 @@ const OrgChart = ({tree, NodeComponent}) => {
         <tbody>
           <tr>
             <td className="nodeCell" colSpan={(node.children || []).length * 2}>
-              <NodeComponent node={node}/>
+              <NodeComponent {...props} node={node}/>
             </td>
           </tr>
           <tr>
