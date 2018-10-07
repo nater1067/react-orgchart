@@ -44,3 +44,8 @@
 .reactOrgChart table td.nodeCell {
     width: 50%;
 }
+
+*[dir="rtl"] .reactOrgChart .orgNodeChildGroup .nodeGroupLineVerticalMiddle {
+    border-left: 1px solid #000;
+    border-right: none;
+}
